@@ -1,6 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
 
 # Updated IT Products Catalogue
 products = [
@@ -15,6 +16,10 @@ products = [
     {"id": 9, "name": "Dell OptiPlex Business Desktop", "price": "$500", "image": "system_unit_03.webp"},
     {"id": 10, "name": "HP Workstation with LCD", "price": "$650", "image": "system_unit_04.webp"},
 ]
+
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(os.path.join(app.root_path, 'static'), filename)
 
 @app.route('/')
 def home():
