@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eCommerce Home</title>
-    <style>
-        body { background-color: green; color: white; text-align: center; font-family: Arial, sans-serif; }
-        a { color: yellow; font-size: 20px; display: block; margin: 10px; }
-    </style>
+    <title>High-Tech eCommerce Store</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>Welcome to Our Advanced eCommerce Store</h1>
-    <a href="/products">View Products</a>
-    <a href="/checkout">Proceed to Checkout</a>
+    <header>
+        <h1>Welcome to the Future of IT Products</h1>
+    </header>
+    <section class="products">
+        {% for product in products %}
+        <div class="product-card">
+            <img src="/images/{{ product.image }}" alt="{{ product.name }}">
+            <h2>{{ product.name }}</h2>
+            <p class="price">{{ product.price }}</p>
+            <a href="/product/{{ product.id }}" class="button">View Details</a>
+        </div>
+        {% endfor %}
+    </section>
+    <footer>
+        <a href="/products">Browse All Products</a> | <a href="/checkout">Go to Checkout</a>
+    </footer>
 </body>
 </html>
