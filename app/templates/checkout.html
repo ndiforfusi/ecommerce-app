@@ -47,17 +47,7 @@
 
         <a href="/products" class="button secondary">Continue Shopping</a>
     </div>
-
-    <script>
-        // Simulated product details for order summary
-        const selectedProduct = JSON.parse(localStorage.getItem("selectedProduct")) || { name: "No product selected", price: "$0.00" };
-        
-        document.getElementById("product-name").innerText = selectedProduct.name;
-        document.getElementById("product-price").innerText = selectedProduct.price;
-        
-        let priceValue = parseFloat(selectedProduct.price.replace("$", "")) || 0;
-        document.getElementById("total-price").innerText = "$" + (priceValue + 10).toFixed(2);  // Add $10 shipping fee
-    </script>
 </body>
 </html>
+
 
