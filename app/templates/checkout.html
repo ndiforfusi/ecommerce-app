@@ -9,21 +9,7 @@
 <body>
     <div class="checkout-container">
         <h1>Secure Checkout</h1>
-        
-        <!-- Order Summary -->
-        <div class="order-summary">
-            <h2>Order Summary</h2>
-            <ul>
-                <li>Product Name: <span id="product-name">Selected Item</span></li>
-                <li>Price: <span id="product-price">$0.00</span></li>
-                <li>Shipping: <span>$10.00</span></li>
-                <li><strong>Total: <span id="total-price">$0.00</span></strong></li>
-            </ul>
-        </div>
-
-        <!-- Payment & Shipping Form -->
         <form id="checkout-form">
-            <h2>Billing Details</h2>
             <label for="fullname">Full Name</label>
             <input type="text" id="fullname" name="fullname" required>
 
@@ -36,15 +22,8 @@
             <label for="card">Credit Card Number</label>
             <input type="text" id="card" name="card" required placeholder="XXXX-XXXX-XXXX-XXXX">
 
-            <label for="exp-date">Expiration Date</label>
-            <input type="month" id="exp-date" name="exp-date" required>
-
-            <label for="cvv">CVV</label>
-            <input type="text" id="cvv" name="cvv" required maxlength="3">
-
             <button type="submit" class="button">Complete Purchase</button>
         </form>
-
         <a href="/products" class="button secondary">Continue Shopping</a>
     </div>
 </body>
