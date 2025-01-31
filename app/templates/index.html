@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High-Tech eCommerce Store</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <header>
@@ -13,7 +13,7 @@
     <section class="products">
         {% for product in products %}
         <div class="product-card">
-            <img src="/static/{{ product.image }}" alt="{{ product.name }}">
+            <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
             <h2>{{ product.name }}</h2>
             <p class="price">{{ product.price }}</p>
             <a href="/product/{{ product.id }}" class="button">View Details</a>
@@ -25,4 +25,5 @@
     </footer>
 </body>
 </html>
+
 

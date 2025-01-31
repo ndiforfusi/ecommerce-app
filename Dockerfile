@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY . /app
 
-# Copy images to the static folder
-COPY images /app/static
+# Ensure static assets are included in the build
+COPY app/static /app/static
 
 RUN pip install -r requirements.txt
 
